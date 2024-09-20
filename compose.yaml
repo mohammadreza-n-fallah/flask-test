@@ -1,0 +1,25 @@
+services:
+  web:
+
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - es
+    environment:
+      - ES_HOST=es
+      - ES_PORT=9200  
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /python-docker  
+
+  es:
+    image: elasticsearch:8.8.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
