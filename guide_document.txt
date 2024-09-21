@@ -3,6 +3,8 @@
 
 #run project:
     docker compose up
+    or
+    docker compose up --watch(sync automaticlly changes in codes)
 
 #build image from Dockerfile:
     docker build -t <image> <path>
