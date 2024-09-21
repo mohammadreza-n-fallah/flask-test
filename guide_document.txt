@@ -1,0 +1,21 @@
+#clone project:
+    git clone <project-address>
+
+#run project:
+    docker compose up
+
+#build image from Dockerfile:
+    docker build -t <image> <path>
+
+#use API(in postman):
+    #add article:
+        http://127.0.0.1:5000/articles
+    #edit article:
+        http://127.0.0.1:5000/articles/<id>
+    #delete article:
+        http://127.0.0.1:5000/articles/<id>
+    #search article:
+        http://127.0.0.1:5000/articles/search?q=QUERY
+    #get article:
+        http://127.0.0.1:5000/articles/<id>        
+
